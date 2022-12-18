@@ -1,0 +1,184 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.container{
+    width: 650px;
+    /* border: 1px solid red; */
+     /* clever property to set height and make it responsive */
+    aspect-ratio: 16/9; 
+    padding: 15px;
+    position: relative;
+}
+
+.piano-container{
+    width: 100%;
+    height: 100%;
+    background-color:#1b1b1b;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header{
+    margin: 5px;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header span{
+    display: inline-block;
+    margin: 0 15px;
+    z-index: 1;
+}
+
+input{
+    background-color: aliceblue;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+.keys-cotainer{
+    width: 100%;
+    /* border:1px red solid ; */
+    display: flex;
+    height: 80%;
+}
+
+.keys-white{
+    height: 100%;
+    display: flex;
+    border:1px solid rgb(251, 218, 218);
+     /* child property of flex to equally stretch  */
+    flex-grow: 1;
+    background-color: white;
+    color: grey;
+    margin: 0px 1px;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 15px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+             /* x , y , blur , blur radius or distance */
+    box-shadow: 0px -4px 0px rgba(21, 21, 21, 0.293) inset;
+}
+.keys-white:active{
+    box-shadow: none;
+    background: linear-gradient(to bottom, white ,rgb(208, 202, 202));
+}
+
+.active-white{
+    box-shadow: none;
+    background: linear-gradient(to bottom, white ,rgb(208, 202, 202));
+}
+
+.keys-black{
+   position: absolute;
+   background-color: black;
+   height: 120px;
+   width:  30px;
+   display:flex;
+   cursor: pointer;
+   justify-content: center;
+   align-items: flex-end;
+   text-transform: capitalize;
+   padding: 10px;
+   color: grey;
+   border-radius: 0px 0px 7px 7px;
+   box-shadow: 0px -5px 0 rgb(106, 106, 106) inset;
+}
+.keys-black:active{
+    box-shadow: none;
+    background: linear-gradient(to bottom, black, rgb(62, 62, 62));
+}
+.active-black{
+    box-shadow: none;
+    background: linear-gradient(to bottom, black, rgb(62, 62, 62));
+}
+#w{
+    left: 7.5%;
+}
+#e{
+    left: 17.5%;
+}
+#t{
+    left: 39%
+}
+#y{
+    left:48%
+}
+#u{
+    right:37.8%
+}
+#o{
+    right: 16%;
+}
+#p{
+    right: 7.1%;  
+}
+
+h1{
+    position: absolute;
+    font-size: 4rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+    top: 80px;
+    color: rgba(0, 123, 255, 0.415);
+    animation: heading 3s alternate infinite;
+}
+
+@keyframes heading {
+    0% {
+        transform: scale(80%);
+      }
+
+    100% {
+        transform: scale(200%);
+      }
+}
+
+h4{
+    position: absolute;
+    font-size: 4rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+    /* right: 0px; */
+    bottom: 60px;
+    color: rgba(0, 123, 255, 0.415);
+    animation: heading3 5s alternate infinite;
+}
+@keyframes heading3 {
+    0% {
+        transform: rotate(8deg);
+      }
+
+    100% {
+        transform: rotate(-8deg);
+      }
+}
+@media screen and (max-width:500px){
+    .container{
+        rotate: 90deg;
+            /* or chota n ho with screen */
+        flex-shrink: 0 ;
+        width: 450px;
+    }
+}
